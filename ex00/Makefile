@@ -6,7 +6,7 @@
 #    By: pokpalae <pokpalae@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 17:00:21 by pokpalae          #+#    #+#              #
-#    Updated: 2024/11/18 17:11:21 by pokpalae         ###   ########.fr        #
+#    Updated: 2024/11/19 15:07:23 by pokpalae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJDIR)/%.o: %.cpp
-	@mkdir -p $(OBJDIR)  # Create the obj directory if it doesn't exist
+	@mkdir -p $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
