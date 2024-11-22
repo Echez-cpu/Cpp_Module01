@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pokpalae <pokpalae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 14:06:49 by pokpalae          #+#    #+#             */
-/*   Updated: 2024/11/22 22:04:24 by pokpalae         ###   ########.fr       */
+/*   Created: 2024/11/21 16:45:31 by pokpalae          #+#    #+#             */
+/*   Updated: 2024/11/22 22:04:56 by pokpalae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Header.hpp"
 
-#include "Zombie.hpp"
-
-Zombie::Zombie() : name("") {}
-
-Zombie::Zombie(str name) : name(name) {}
-
-Zombie::~Zombie()
+int main(int argc, char **argv)
 {
-    std::cout << "\033[31m" << "Zombie " << name << " was annihilated." << "\033[0m" << std::endl;
-}
+    if (argc != 4) 
+    {
+        std::cerr << "Usage: ./replace <filename> <s1> <s2>" << std::endl;
+        return 1;
+    }
 
-void Zombie::announce() const
-{
-    std::cout << "\033[32m" << name << ": BraiiiiiiinnnzzzZ..." << "\033[0m" << std::endl;
-}
+    str filename = argv[1];
+    str s1 = argv[2];
+    str s2 = argv[3];
 
-void Zombie::setName(const str &name)
-{
-    this->name = name;
+    replaceInFile(filename, s1, s2);
+
+    return 0;
 }

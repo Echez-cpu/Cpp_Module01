@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Header.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pokpalae <pokpalae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 14:06:49 by pokpalae          #+#    #+#             */
-/*   Updated: 2024/11/22 22:04:24 by pokpalae         ###   ########.fr       */
+/*   Created: 2024/11/22 16:30:05 by pokpalae          #+#    #+#             */
+/*   Updated: 2024/11/22 16:41:27 by pokpalae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HEADER_HPP
+#define HEADER_HPP
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <fstream>
+#include <string>
 
-Zombie::Zombie() : name("") {}
+typedef std::string str;
+void replaceInFile(const str &filename, const str &s1, const str &s2);
 
-Zombie::Zombie(str name) : name(name) {}
-
-Zombie::~Zombie()
-{
-    std::cout << "\033[31m" << "Zombie " << name << " was annihilated." << "\033[0m" << std::endl;
-}
-
-void Zombie::announce() const
-{
-    std::cout << "\033[32m" << name << ": BraiiiiiiinnnzzzZ..." << "\033[0m" << std::endl;
-}
-
-void Zombie::setName(const str &name)
-{
-    this->name = name;
-}
+#endif
