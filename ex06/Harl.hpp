@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pokpalae <pokpalae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 14:08:24 by pokpalae          #+#    #+#             */
-/*   Updated: 2024/11/25 18:36:27 by pokpalae         ###   ########.fr       */
+/*   Created: 2024/11/25 18:41:01 by pokpalae          #+#    #+#             */
+/*   Updated: 2024/11/25 18:44:40 by pokpalae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HARL_HPP
+#define HARL_HPP
 
-#include "Weapon.hpp"
+#include <iostream>
+#include <string>
 
-Weapon::Weapon(const str &type) : type(type) {}
+typedef std::string str;
 
-const std::string& Weapon::getType() const
+class Harl
 {
-    return type;
-}
+private:
+    void debug(void) const;
+    void info(void) const;
+    void warning(void) const;
+    void error(void) const;
 
-void Weapon::setType(const str &newType)
-{
-    type = newType;
-}
+public:
+    void complain(str level);
+};
+
+#endif
+

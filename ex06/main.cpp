@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pokpalae <pokpalae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 14:08:24 by pokpalae          #+#    #+#             */
-/*   Updated: 2024/11/25 18:36:27 by pokpalae         ###   ########.fr       */
+/*   Created: 2024/11/25 18:56:11 by pokpalae          #+#    #+#             */
+/*   Updated: 2024/11/25 19:43:56 by pokpalae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Weapon.hpp"
+#include "Harl.hpp"
 
-Weapon::Weapon(const str &type) : type(type) {}
-
-const std::string& Weapon::getType() const
+int main(int argc, char **argv) 
 {
-    return type;
-}
+    if (argc != 2) 
+	{
+        std::cout << "\033[31mUsage:\033[0m ./harlFilter <level>" << std::endl;
+        return 1;
+    }
 
-void Weapon::setType(const str &newType)
-{
-    type = newType;
+    Harl harl;
+    harl.complain(argv[1]);
+
+    return 0;
 }
